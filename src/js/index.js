@@ -12,7 +12,8 @@ Vue.component('versions-table', VersionsTable);
 
 Vue.filter('formatDate', function (value) {
     if (value) {
-        return moment(String(value)).format('DD.MM.YYYY');
+        return moment.unix(Number(value)).locale('uk').format("DD MMM.YYYY HH:mm");
+        //return moment.unix(1637768407).locale('uk').format("DD MMM.YYYY HH:mm")
     }
 });
 
