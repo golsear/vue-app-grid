@@ -13,7 +13,7 @@
           <tr v-for="entry in rows">
             <td v-for="column in columns">
               <template v-if="entry[column.key].type === 'status'">
-                {{ entry[column.key].value }}
+                <span :class="getStatusCssClass(entry[column.key].statusCode)">{{ entry[column.key].value }}</span>
               </template>
               <template v-else-if="entry[column.key].type === 'date'">
                 {{ entry[column.key].value | formatDate(entry[column.key].format)}}
@@ -35,6 +35,24 @@
 
 <script>
     export default {
-        props: ['columns', 'rows']
+        props: ['columns', 'rows'],
+        methods: {
+          getStatusCssClass: function (status) {
+            let cssClass = '';
+
+            switch (status) {
+              case 2:
+                cssClass = "text-danger";
+                break;
+              case 3:
+                cssClass = "text-success";
+                break;
+              default:
+                cssClass = '';
+            }
+
+            return cssClass;
+          }
+        }
     }
 </script>
