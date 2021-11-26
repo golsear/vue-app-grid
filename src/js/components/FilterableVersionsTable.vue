@@ -1,9 +1,25 @@
 <template>
-    <div class="filterable-versions-table">
-      <button @click="updateData()">Оновити дані</button>
-        <filters-bar :grid-filters="filters"></filters-bar>
-        <versions-table :columns="filteredColumns"
-                        :rows="filteredRows"></versions-table>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="h3 mt-4 mb-4">Vue grid component</h1>
+        </div>
+        <div class="col-12">
+          <button @click="updateData()"
+                  class="btn btn-outline-primary btn-sm">Оновити дані</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <filters-bar :grid-filters="filters"></filters-bar>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <versions-table :columns="filteredColumns"
+                          :rows="filteredRows"></versions-table>
+        </div>
+      </div>
     </div>
 </template>
 

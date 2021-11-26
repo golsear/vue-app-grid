@@ -1,11 +1,10 @@
 <template>
-    <div class="versions-table">
-        Versions table
-      <table>
+    <div class="table-responsive">
+      <table class="table table-sm">
         <thead>
           <tr>
             <th v-for="column in columns">
-                {{ column.name }}
+              <span class="text-nowrap">{{ column.name }}</span>
             </th>
           </tr>
         </thead>
@@ -13,10 +12,10 @@
           <tr v-for="entry in rows">
             <td v-for="column in columns">
               <template v-if="entry[column.key].type === 'status'">
-                <span :class="getStatusCssClass(entry[column.key].statusCode)">{{ entry[column.key].value }}</span>
+                <span :class="getStatusCssClass(entry[column.key].statusCode) + ' text-nowrap'">{{ entry[column.key].value }}</span>
               </template>
               <template v-else-if="entry[column.key].type === 'date'">
-                {{ entry[column.key].value | formatDate(entry[column.key].format)}}
+                <span class="text-nowrap">{{ entry[column.key].value | formatDate(entry[column.key].format)}}</span>
               </template>
               <template v-else-if="entry[column.key].type === 'component'">
                 <component :is="entry[column.key].value"

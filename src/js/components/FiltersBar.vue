@@ -1,8 +1,7 @@
 <template>
-    <div class="filters-bar">
-        Filters bar
+    <div class="mt-4 mb-2">
         <template v-for="filter in gridFilters">
-          <div class="form-check">
+          <div class="form-check form-check-inline">
             <input class="form-check-input"
                    type="checkbox"
                    :value="filter.key"

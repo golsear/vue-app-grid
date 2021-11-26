@@ -1,6 +1,9 @@
 <template>
     <div class="grid__button">
-        <button @click="handleClick()">{{ text }}</button>
+        <button @click="handleClick()"
+                class="btn btn-outline-primary btn-sm">
+          <span class="text-nowrap">{{ text }}</span>
+        </button>
     </div>
 </template>
 
