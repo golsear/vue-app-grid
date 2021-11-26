@@ -4,18 +4,22 @@ export const defaultData = [
             {
                 key: 'version',
                 isChecked: true,
+                label: 'Версія'
             },
             {
                 key: 'creationDate',
                 isChecked: true,
+                label: 'Дата створення'
             },
             {
                 key: 'status',
-                isChecked: true
+                isChecked: true,
+                label: 'Статус'
             },
             {
                 key: 'statusChangeDate',
-                isChecked: true
+                isChecked: true,
+                label: 'Дата зміни статусу'
             }
         ],
         columns: [

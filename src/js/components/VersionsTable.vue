@@ -33,22 +33,6 @@
 
 <script>
     export default {
-        props: ['columns', 'rows'],
-        data() {
-            return {
-
-            }
-        },
-        methods: {
-
-         },
-        mounted() {
-        },
-        created() {
-
-        },
-        watch: {
-
-        }
+        props: ['columns', 'rows']
     }
 </script>

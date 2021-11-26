@@ -1,7 +1,7 @@
 <template>
     <div class="filterable-versions-table">
         Filterable versions table
-        <filters-bar></filters-bar>
+        <filters-bar :grid-filters="gridData.filters"></filters-bar>
         <versions-table :columns="filteredColumns"
                         :rows="filteredRows"></versions-table>
     </div>
@@ -14,17 +14,12 @@
       props: [],
         data() {
             return {
-              gridData: defaultData[0]
+              gridData: defaultData[0],
             }
         },
         computed: {
           checkedFilters: function () {
-            return this.gridData.filters.filter((filter) => {
-              return filter.isChecked;
-            })
-            .map(function(filter) {
-              return filter.key;
-            });
+            return this.$store.state.filters;
           },
           filteredColumnsKeys: function () {
             return this.filteredColumns.map(( column ) => column.key );
@@ -48,18 +43,6 @@
                       }, {});
             });
           }
-        },
-        methods: {
-
-         },
-        mounted() {
-
-        },
-        created() {
-
-        },
-        watch: {
-
         }
     }
 </script>
