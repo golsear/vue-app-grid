@@ -6,12 +6,14 @@ import Vuex from 'vuex';
 import FilterableVersionsTable from './components/FilterableVersionsTable.vue';
 import FiltersBar from './components/FiltersBar.vue';
 import VersionsTable from './components/VersionsTable.vue';
+import GridButton from './components/GridButton.vue';
 
 Vue.use(Vuex);
 
 Vue.component('filterable-versions-table', FilterableVersionsTable);
 Vue.component('filters-bar', FiltersBar);
 Vue.component('versions-table', VersionsTable);
+Vue.component('grid-button', GridButton);
 
 Vue.filter('formatDate', function (value) {
     if (value) {

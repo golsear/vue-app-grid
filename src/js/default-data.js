@@ -69,8 +69,10 @@ export const defaultData = [
                     type: 'date'
                 },
                 component: {
-                    value: 'button',
-                    type: 'component'
+                    value: 'grid-button',
+                    type: 'component',
+                    text: 'Продовжити',
+                    clickHandle: 'continue'
                 },
                 extraField: {
                     value: 'extra field',
@@ -96,8 +98,10 @@ export const defaultData = [
                     type: 'date'
                 },
                 component: {
-                    value: 'button',
-                    type: 'component'
+                    value: 'grid-button',
+                    type: 'component',
+                    text: 'Переглянути',
+                    clickHandle: 'review'
                 }
             },
             {
@@ -119,8 +123,10 @@ export const defaultData = [
                     type: 'date'
                 },
                 component: {
-                    value: 'button',
-                    type: 'component'
+                    value: 'grid-button',
+                    type: 'component',
+                    text: 'Переглянути',
+                    clickHandle: 'review'
                 }
             }
         ]

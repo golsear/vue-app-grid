@@ -19,7 +19,9 @@
                 {{ entry[column.key].value | formatDate}}
               </template>
               <template v-else-if="entry[column.key].type === 'component'">
-                Render component {{ entry[column.key].value }}
+                <component :is="entry[column.key].value"
+                           :text="entry[column.key].text"
+                           :click-handle="entry[column.key].clickHandle"></component>
               </template>
               <template v-else>
                 {{ entry[column.key].value }}
