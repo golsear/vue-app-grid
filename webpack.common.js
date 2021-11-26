@@ -104,7 +104,7 @@ module.exports = () => {
 			Popper: ['popper.js', 'default'],
             Promise: 'es6-promise-promise'
 		}),
-        new CopyWebpackPlugin([
+        /*new CopyWebpackPlugin([
             {
             	from: providerResPath + 'img/',
 				to: '../img/',
@@ -115,7 +115,7 @@ module.exports = () => {
                 to: '../fonts/',
                 noErrorOnMissing: true
             }
-        ]),
+        ]),*/
 		new ExtractTextPlugin({
 			filename: (getPath) => {
 				//return getPath('../CSS/[name].css');
