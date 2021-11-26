@@ -15,9 +15,10 @@ Vue.component('filters-bar', FiltersBar);
 Vue.component('versions-table', VersionsTable);
 Vue.component('grid-button', GridButton);
 
-Vue.filter('formatDate', function (value) {
+Vue.filter('formatDate', function (value, format) {
     if (value) {
-        return moment.unix(Number(value)).locale('uk').format("DD MMM.YYYY HH:mm");
+        let date = moment.unix(Number(value)).locale('uk');
+        return date.isValid() ? moment.unix(Number(value)).locale('uk').format(format) : value;
     }
 });
 

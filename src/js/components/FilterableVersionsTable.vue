@@ -1,7 +1,7 @@
 <template>
     <div class="filterable-versions-table">
-        Filterable versions table
-        <filters-bar :grid-filters="gridData.filters"></filters-bar>
+      <button @click="updateData()">Оновити дані</button>
+        <filters-bar :grid-filters="filters"></filters-bar>
         <versions-table :columns="filteredColumns"
                         :rows="filteredRows"></versions-table>
     </div>
@@ -15,6 +15,8 @@
         data() {
             return {
               gridData: defaultData[0],
+              defaultDataIndexes: Array.from(defaultData.keys()),
+              currentIndex: 1
             }
         },
         computed: {
@@ -42,6 +44,21 @@
                         return obj;
                       }, {});
             });
+          },
+          filters: function () {
+            return this.gridData.filters;
+          }
+        },
+        methods: {
+          updateData: function () {
+            const arrLength = this.defaultDataIndexes.length;
+
+            if ( this.currentIndex == arrLength ) {
+              this.currentIndex = 0;
+            }
+
+            this.gridData = defaultData[this.currentIndex];
+            this.currentIndex += 1;
           }
         }
     }

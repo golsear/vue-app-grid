@@ -18,8 +18,6 @@
 </template>
 
 <script>
-    import axios from 'axios';
-
     export default {
         props: ['gridFilters'],
         data() {
@@ -42,6 +40,9 @@
         watch: {
           checkedFilters: function (val, oldVal) {
             this.$store.commit('updateFilters', val);
+          },
+          gridFilters: function (val) {
+            this.setupFilters();
           }
         }
     }

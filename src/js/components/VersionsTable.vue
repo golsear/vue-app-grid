@@ -16,7 +16,7 @@
                 {{ entry[column.key].value }}
               </template>
               <template v-else-if="entry[column.key].type === 'date'">
-                {{ entry[column.key].value | formatDate}}
+                {{ entry[column.key].value | formatDate(entry[column.key].format)}}
               </template>
               <template v-else-if="entry[column.key].type === 'component'">
                 <component :is="entry[column.key].value"
